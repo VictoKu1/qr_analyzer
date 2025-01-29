@@ -77,7 +77,7 @@ Feel free to open issues or submit PRs. For bigger changes, open an issue to dis
 [MIT License](LICENSE)
 
 
-## Notes & Final Remarks
+## Notes & Remarks
 
 1. **Web Compatibility**:  
    - Some libraries (like `image_picker`) and `qr_code_tools` may have limited or no web support. If true cross-platform is desired, you might need a web-friendly alternative or fallback.  
@@ -99,3 +99,6 @@ With this **step-by-step** setup, you have a basic Flutter app that:
 - Displays the results in a straightforward UI.
 
 Feel free to **customize** the design, add robust error handling, or integrate more advanced features like domain reputation checks or advanced vision models.
+
+
+
