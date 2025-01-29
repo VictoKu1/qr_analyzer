@@ -18,6 +18,7 @@ This Flutter app lets users capture an image from the camera or pick one from th
 
 ## Project Structure
 
+```
 qr_analyzer/
 ├── lib/
 │   ├── main.dart
@@ -27,7 +28,7 @@ qr_analyzer/
 │   └── qr_utils.dart
 ├── pubspec.yaml
 └── README.md
-
+```
 
 ## Getting Started
 
@@ -99,6 +100,5 @@ With this **step-by-step** setup, you have a basic Flutter app that:
 - Displays the results in a straightforward UI.
 
 Feel free to **customize** the design, add robust error handling, or integrate more advanced features like domain reputation checks or advanced vision models.
-
 
 
