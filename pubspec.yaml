@@ -1,0 +1,36 @@
+name: my_qr_analyzer_app
+description: A Flutter app to capture or pick images, analyze them via OpenAI, and decode QR codes.
+
+publish_to: "none" 
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  camera: ^0.10.0+4
+  # plus the other dependencies: permission_handler, qr_code_tools, http, etc.
+
+  # HTTP for calls to OpenAI API
+  http: ^0.13.5
+
+  # Image picker to get image from gallery or camera
+  image_picker: ^0.8.7+3
+
+  # Permission handler for runtime permissions (camera, storage, etc.)
+  permission_handler: ^10.0.0
+
+  # QR decoding from images
+  # Option A: qr_code_tools (pure Dart, but may have limitations on web)
+  # Option B: google_ml_kit (Android/iOS) or other libraries
+  # We'll try qr_code_tools for example:
+  qr_code_tools: ^0.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+
