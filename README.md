@@ -2,6 +2,8 @@
 
 This Flutter app lets users capture an image from the camera or pick one from the gallery, sends the image to OpenAI for an initial analysis, and then decodes any QR codes found in the image. Each QR code's text is further analyzed by OpenAI to determine what it does (e.g., URL, Wi-Fi credentials, etc.) and any potential security risks.
 
+Read the Wiki on this project and QR codes [**Here**](https://github.com/VictoKu1/qr_analyzer.wiki.git)
+
 ## Features
 
 1. **Camera Capture**: Opens device camera to take a photo.
@@ -100,5 +102,3 @@ With this **step-by-step** setup, you have a basic Flutter app that:
 - Displays the results in a straightforward UI.
 
 Feel free to **customize** the design, add robust error handling, or integrate more advanced features like domain reputation checks or advanced vision models.
-
-
