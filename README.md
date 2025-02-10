@@ -2,33 +2,35 @@
 
 This Flutter app lets users capture an image from the camera or pick one from the gallery, sends the image to OpenAI for an initial analysis, and then decodes any QR codes found in the image. Each QR code's text is further analyzed by OpenAI to determine what it does (e.g., URL, Wi-Fi credentials, etc.) and any potential security risks.
 
-Read the Wiki on this project and QR codes [**Here**](https://github.com/VictoKu1/qr_analyzer.wiki.git)
+Read the Wiki on this project and QR codes [**Here**](https://github.com/VictoKu1/qr_analyzer/wiki)
 
 ## Features
 
 1. **Camera Capture**: Opens device camera to take a photo.
 2. **Gallery Import**: Allows selecting existing images (`.jpg`, `.jpeg`, `.png`).
 3. **OpenAI Integration**:
-   - Initial Image Analysis
-   - QR Text Analysis
+   - Initial Image Analysis (conceptually using GPT-4o text completions; a production version might require a specialized vision model or a chat-completion API).
+   - QR Text Analysis.
 4. **QR Decoding** (using `qr_code_tools`).
 
 ## Requirements
 
-- **Flutter SDK** (2.17 or above).  
+- **Flutter SDK** (3.0 or above).  
 - A **valid OpenAI API key** (placed in `openai_service.dart` for demo).
 
 ## Project Structure
 
 ```
 qr_analyzer/
-├── lib/
+│ └─lib/
 │   ├── main.dart
-│   ├── home_screen.dart
-│   ├── camera_screen.dart   (Optional if you want a separate screen for camera)
-│   ├── openai_service.dart
-│   └── qr_utils.dart
-├── pubspec.yaml
+│   ├── screens/
+│   │    ├── home_screen.dart
+│   │    └── camera_screen.dart
+│   ├── services/
+│   │    └── openai_service.dart
+│   └── utilities/
+│       └── qr_utils.dart
 └── README.md
 ```
 
@@ -85,7 +87,7 @@ Feel free to open issues or submit PRs. For bigger changes, open an issue to dis
 1. **Web Compatibility**:  
    - Some libraries (like `image_picker`) and `qr_code_tools` may have limited or no web support. If true cross-platform is desired, you might need a web-friendly alternative or fallback.  
 2. **Multi-QR Support**:  
-   - `qr_code_tools` typically decodes the *first* found QR code. For multi-QR detection, you might look at [**google_ml_kit**](https://pub.dev/packages/google_ml_kit) or specialized libraries that detect **all** QR codes in an image.  
+   - Currently, `qr_code_tools` typically decodes the *first* found QR code. For detecting multiple QR codes, consider using packages like [google_ml_kit](https://pub.dev/packages/google_ml_kit) or another specialized library.
 3. **OpenAI Image Analysis**:  
    - The example uses GPT-3.5-Turbo’s `/chat/completions` for an “image analysis,” which isn’t truly supported in standard GPT endpoints. This is a **conceptual** approach. In production, you’d need a real vision model or to integrate with a specialized service.  
 4. **Permissions**:  
@@ -102,3 +104,11 @@ With this **step-by-step** setup, you have a basic Flutter app that:
 - Displays the results in a straightforward UI.
 
 Feel free to **customize** the design, add robust error handling, or integrate more advanced features like domain reputation checks or advanced vision models.
+
+
+
+
+
+
+
+
